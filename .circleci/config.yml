@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  job1:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run:
+          name: Run main.py
+          command: python3 main.py
+
+workflows:
+  run:
+    jobs:
+      - job1
